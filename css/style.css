@@ -1,0 +1,126 @@
+.page-builder {
+    padding: 40px 20px;
+}
+
+.builder-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* CONTAINER 3D */
+.card-display-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    perspective: 1000px;
+}
+
+.card-3d {
+    width: 350px;
+    height: 210px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+}
+
+.card-3d.flipped {
+    transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 16px;
+    padding: 25px;
+    box-sizing: border-box;
+    background: #1e293b;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+    padding: 0;
+}
+
+.card-chip {
+    width: 45px;
+    height: 35px;
+    background: linear-gradient(135deg, #e2e8f0, #94a3b8);
+    border-radius: 6px;
+}
+
+.card-number {
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    font-family: monospace;
+}
+
+.card-details {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+}
+
+.magnetic-strip {
+    width: 100%;
+    height: 45px;
+    background: #000;
+    margin-top: 25px;
+}
+
+.cvv-box {
+    background: #fff;
+    color: #000;
+    margin: 20px;
+    padding: 10px;
+    text-align: right;
+    font-family: monospace;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.card-form-area {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+
+@media (max-width: 768px) {
+    .builder-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
