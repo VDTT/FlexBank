@@ -1,126 +1,114 @@
-.page-builder {
-    padding: 40px 20px;
+here/* Reset & Variáveis Globais */
+:root {
+  --primary: #4f46e5;
+  --primary-dark: #4338ca;
+  --bg-dark: #0f172a;
+  --bg-card: #1e293b;
+  --text-light: #f8fafc;
+  --text-muted: #94a3b8;
+  --border: #334155;
+  --radius: 12px;
 }
 
-.builder-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    margin-top: 30px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* CONTAINER 3D */
-.card-display-area {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    perspective: 1000px;
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-.card-3d {
-    width: 350px;
-    height: 210px;
-    position: relative;
-    transform-style: preserve-3d;
-    transition: transform 0.6s ease;
-    border-radius: 16px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+/* Container Global */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
-.card-3d.flipped {
-    transform: rotateY(180deg);
+/* Header & Nav */
+.header {
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 1rem 0;
 }
 
-.card-front, .card-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    backface-visibility: hidden;
-    border-radius: 16px;
-    padding: 25px;
-    box-sizing: border-box;
-    background: #1e293b;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.card-back {
-    transform: rotateY(180deg);
-    padding: 0;
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+  text-decoration: none;
 }
 
-.card-chip {
-    width: 45px;
-    height: 35px;
-    background: linear-gradient(135deg, #e2e8f0, #94a3b8);
-    border-radius: 6px;
+.logo span {
+  color: var(--primary);
 }
 
-.card-number {
-    font-size: 1.3rem;
-    letter-spacing: 2px;
-    font-family: monospace;
+.nav-menu ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  align-items: center;
 }
 
-.card-details {
-    display: flex;
-    justify-content: space-between;
-    text-transform: uppercase;
+.nav-menu a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-.magnetic-strip {
-    width: 100%;
-    height: 45px;
-    background: #000;
-    margin-top: 25px;
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: #fff;
 }
 
-.cvv-box {
-    background: #fff;
-    color: #000;
-    margin: 20px;
-    padding: 10px;
-    text-align: right;
-    font-family: monospace;
-    font-weight: bold;
-    border-radius: 4px;
+/* Botões */
+.btn-primary {
+  background: var(--primary);
+  color: #fff !important;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
 }
 
-.card-form-area {
-    background: #fff;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+.btn-primary:hover {
+  background: var(--primary-dark);
 }
 
-.form-group {
-    margin-bottom: 20px;
+/* Hero Section */
+.hero {
+  padding: 5rem 0;
+  text-align: center;
 }
 
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
+.hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
 }
 
-.form-group input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 6px;
+.hero p {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
 }
-
-.form-row {
-    display: flex;
-    gap: 10px;
-}
-
-@media (max-width: 768px) {
-    .builder-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
