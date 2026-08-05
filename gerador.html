@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardCraft - Criar Cartão</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/card-preview.css"> <!-- Estilos específicos do cartão -->
+</head>
+<body>
+
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Card<span>Craft</span></a>
+            <button class="mobile-toggle" aria-label="Abrir Menu">☰</button>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="gerador.html" class="active">Gerador</a></li>
+                    <li><a href="meus-cartoes.html">Meus Cartões</a></li>
+                    <li><a href="api-doc.html">Documentação</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container page-builder">
+        <h2>Personalize seu Cartão Fictício</h2>
+        <p class="subtitle">Os dados gerados aqui são apenas para preenchimento visual e testes de interface.</p>
+
+        <div class="builder-grid">
+            <!-- PRÉ-VISUALIZAÇÃO DO CARTÃO 3D -->
+            <div class="card-display-area">
+                <div class="card-3d" id="cardElement">
+                    <!-- LADO DA FRENTE -->
+                    <div class="card-front">
+                        <div class="card-chip"></div>
+                        <div class="card-brand" id="previewBrand">VISA</div>
+                        <div class="card-number" id="previewNumber">•••• •••• •••• ••••</div>
+                        <div class="card-details">
+                            <div class="card-holder">
+                                <small>Titular</small>
+                                <span id="previewName">NOME DO TITULAR</span>
+                            </div>
+                            <div class="card-expiration">
+                                <small>Validade</small>
+                                <span id="previewExp">12/28</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LADO DO VERSO -->
+                    <div class="card-back">
+                        <div class="magnetic-strip"></div>
+                        <div class="cvv-box">
+                            <small>CVV</small>
+                            <span id="previewCVV">123</span>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn-secondary" id="flipCardBtn">🔄 Girar Cartão</button>
+            </div>
+
+            <!-- FORMULÁRIO DE CONFIGURAÇÃO -->
+            <div class="card-form-area">
+                <form id="cardForm">
+                    <div class="form-group">
+                        <label for="cardName">Nome no Cartão</label>
+                        <input type="text" id="cardName" placeholder="Ex: ALEX S SILVA" maxlength="22" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cardColor">Cor do Cartão</label>
+                        <input type="color" id="cardColor" value="#1e293b">
+                    </div>
+
+                    <div class="form-row">
+                        <button type="button" class="btn-secondary" id="btnRandomize">🎲 Gerar Números Válidos</button>
+                        <button type="submit" class="btn-primary">💾 Salvar na Carteira</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-content">
+            <p>&copy; 2026 CardCraft. Uso exclusivo para testes.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/gerador.js"></script>
+</body>
+</html>
+
