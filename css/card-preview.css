@@ -1,0 +1,173 @@
+/* ==========================================
+   ESTILOS EXCLUSIVOS DO GERADOR E CARTÃO 3D
+   ========================================== */
+
+.page-builder {
+    padding: 40px 20px;
+}
+
+.subtitle {
+    color: #64748b;
+    margin-top: 5px;
+}
+
+.builder-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* CONTAINER DO CARTÃO E EFEITO 3D */
+.card-display-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    perspective: 1000px; /* Cria a profundidade para a rotação 3D */
+}
+
+.card-3d {
+    width: 350px;
+    height: 210px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+/* Classe aplicada via JS para girar o cartão */
+.card-3d.flipped {
+    transform: rotateY(180deg);
+}
+
+/* FRENTE E VERSO DO CARTÃO */
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Esconde o lado oposto quando girado */
+    border-radius: 16px;
+    padding: 25px;
+    box-sizing: border-box;
+    background: #1e293b; /* Cor padrão, alterada via JS */
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* VERSO DO CARTÃO */
+.card-back {
+    transform: rotateY(180deg);
+    padding: 0;
+}
+
+.card-brand {
+    font-weight: 800;
+    font-size: 1.2rem;
+    text-align: right;
+    letter-spacing: 1px;
+}
+
+.card-chip {
+    width: 45px;
+    height: 35px;
+    background: linear-gradient(135deg, #e2e8f0, #94a3b8);
+    border-radius: 6px;
+}
+
+.card-number {
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.card-details {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+.card-holder span, .card-expiration span {
+    display: block;
+    font-weight: 600;
+}
+
+.card-holder small, .card-expiration small {
+    font-size: 0.65rem;
+    color: #cbd5e1;
+}
+
+/* ELEMENTOS DO VERSO */
+.magnetic-strip {
+    width: 100%;
+    height: 45px;
+    background: #000000;
+    margin-top: 25px;
+}
+
+.cvv-box {
+    background: #ffffff;
+    color: #000000;
+    margin: 20px;
+    padding: 10px;
+    text-align: right;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.cvv-box small {
+    display: block;
+    font-size: 0.65rem;
+    color: #64748b;
+}
+
+/* FORMULÁRIO DO GERADOR */
+.card-form-area {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* ADAPTAÇÃO PARA TELA DE CELULAR */
+@media (max-width: 768px) {
+    .builder-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-3d {
+        width: 100%;
+        max-width: 340px;
+    }
+}
+
