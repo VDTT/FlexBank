@@ -161,3 +161,47 @@ body {
     display: inline-block;
   }
 }
+
+/* Aviso de construção */
+.wip-banner {
+    background: #e11d48;
+    color: white;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 5px;
+}
+
+/* Esconder o menu no celular */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .hamburger { display: block; }
+    
+    .nav-menu {
+        display: none; /* Escondido por padrão */
+        width: 100%;
+        background: #1e293b;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        padding: 20px;
+        z-index: 99;
+    }
+
+    .nav-menu.active {
+        display: block; /* Mostra quando clicar */
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
